@@ -20,7 +20,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\CaesarCipher.h">
+    <ClInclude Include="cpp\CaesarCipher.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\AffineCipher.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\CaesarCipherTest.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
