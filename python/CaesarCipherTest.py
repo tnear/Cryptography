@@ -4,7 +4,7 @@ import unittest
 import CaesarCipher
 
 # Benchmark:
-# > python -m timeit --setup "import CaesarCipher" "CaesarCipher.encrypt('abcdefghijklmnopqrstuvwxyz', 1)"
+# python -m timeit --setup "import CaesarCipher" "CaesarCipher.encrypt('abcdefghijklmnopqrstuvwxyz', 1)"
 # 200000 loops, best of 5: 11.9 usec per loop
 
 # Tests:

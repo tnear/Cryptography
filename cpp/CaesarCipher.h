@@ -4,9 +4,11 @@
 // This implementation converts upper and lowercase letters while skipping others:
 // CaesarCipher::encrypt("a B", -1) => "z A"
 
-#pragma once
+#ifndef CAESAR_CIPHER_H
+#define CAESAR_CIPHER_H
 
 #include <string>
+#include <cassert>
 
 namespace CaesarCipher
 {
@@ -35,3 +37,5 @@ namespace CaesarCipher
         return encrypt(input, shift);
     }
 }
+
+#endif

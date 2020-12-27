@@ -1,12 +1,12 @@
 // main.cpp
 
 #include <iostream>
-#include "cpp/AffineCipher.h"
+#include "cpp/AffineCipherTest.h"
 #include "cpp/CaesarCipherTest.h"
 
 int main()
 {
-    AffineCipher::testSuite();
-    //CaesarCipher::testSuite();
+    testSuite();
+    CaesarCipher::testSuite();
     std::cout << "Tests passed!\n";
 }

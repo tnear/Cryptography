@@ -21,7 +21,8 @@ static void BM_CaesarCipher(benchmark::State &state)
 BENCHMARK(BM_CaesarCipher);
 */
 
-#pragma once
+#ifndef CAESAR_CIPHER_TEST_H
+#define CAESAR_CIPHER_TEST_H
 
 #include <string>
 #include <cassert>
@@ -98,3 +99,5 @@ namespace CaesarCipher
         testDecrypt();
     }
 };
+
+#endif

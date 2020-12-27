@@ -29,5 +29,8 @@
     <ClInclude Include="cpp\CaesarCipherTest.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="cpp\AffineCipherTest.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
