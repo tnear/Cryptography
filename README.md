@@ -1,2 +1,2 @@
 # Cryptography
-Cryptography algorithms.
+Cryptography algorithms and designs.
