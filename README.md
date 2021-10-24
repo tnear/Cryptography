@@ -1,2 +1,2 @@
 # Cryptography
-Cryptography algorithms and designs.
+Cryptography algorithms, ciphers, and performance benchmarks across a variety of programming languages.
