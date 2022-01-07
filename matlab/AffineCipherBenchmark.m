@@ -1,7 +1,7 @@
 classdef AffineCipherBenchmark < matlab.perftest.TestCase
     methods(Test)
         %{
-        To run:
+        To measure:
         results = runperf('AffineCipherBenchmark','ProcedureName','encryptPerformance');
         mean(results.Samples.MeasuredTime)
         % Duration: 3.9982e-05
