@@ -1,3 +1,4 @@
+% Affine cipher regression tests
 classdef AffineCipherTest < matlab.unittest.TestCase
     methods(Test)
         function testEncrypt(testCase)
