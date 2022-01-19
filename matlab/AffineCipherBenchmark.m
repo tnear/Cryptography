@@ -1,3 +1,4 @@
+% Performance tests for Affine Cipher
 classdef AffineCipherBenchmark < matlab.perftest.TestCase
     methods(Test)
         %{
