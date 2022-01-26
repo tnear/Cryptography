@@ -40,12 +40,6 @@ classdef AffineCipher
             end
 
             aInverse = AffineCipher.findInverse(a);
-            if aInverse == AffineCipher.NO_INVERSE
-                errorStruct.message = 'a has no inverse.';
-                errorStruct.identifier = 'No:Inverse';
-                error(errorStruct);
-            end
-
             output = AffineCipher.calculate(input, aInverse, b, AffineCipher.DECRYPT);
         end
     end
@@ -57,12 +51,13 @@ classdef AffineCipher
             arguments
                 a double;
             end
-            a = mod(a, AffineCipher.ALPHA);
-            aRange = 0:AffineCipher.ALPHA-1;
-            inverses = mod(a * aRange, AffineCipher.ALPHA);
-            aInverse = find(inverses == 1) - 1;
-            if isempty(aInverse)
-                aInverse = AffineCipher.NO_INVERSE;
+            [a, U] = gcd(a, AffineCipher.ALPHA);
+            if a == 1
+                aInverse = mod(U, AffineCipher.ALPHA);
+            else
+                errorStruct.message = 'a has no inverse.';
+                errorStruct.identifier = 'No:Inverse';
+                error(errorStruct);
             end
         end
 
