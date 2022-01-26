@@ -1,5 +1,5 @@
 # AffineCipherTest.py
-# Benchmarking and test cases for Affine cipher
+# Benchmarking and regression tests for Affine cipher implemented in Python
 
 import unittest
 import AffineCipher

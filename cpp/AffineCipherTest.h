@@ -1,7 +1,7 @@
 // AffineCipherTest.h
 // Benchmarking and test cases for Affine cipher
 
-/* Benchmark:
+/* Google Benchmark output:
 -----------------------------------------------------------------
 Benchmark                       Time             CPU   Iterations
 -----------------------------------------------------------------
