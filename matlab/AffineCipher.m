@@ -19,7 +19,7 @@ classdef AffineCipher
                 b (1,1) int32;
             end
 
-            a = mod(a, AffineCipher.ALPHA); % restrict inputs to [0:25]
+            a = mod(a, AffineCipher.ALPHA); % restrict input domain to [0:25]
             b = mod(b, AffineCipher.ALPHA);
 
             isCoprime = AffineCipher.gcdLocal(a, AffineCipher.ALPHA) == 1;
