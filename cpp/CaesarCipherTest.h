@@ -1,4 +1,4 @@
-// Test suite for various boundary conditions such as
+// Test suite for various boundary conditions for a Caesar Cipher:
 // - empty string
 // - positive, negative, zero, and maximum shift sizes
 // - right shift were uppercase are shifted into ascii value of lowercase
