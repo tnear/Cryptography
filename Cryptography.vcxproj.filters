@@ -32,5 +32,11 @@
     <ClInclude Include="cpp\AffineCipherTest.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="cpp\RC4.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp\RC4Test.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
