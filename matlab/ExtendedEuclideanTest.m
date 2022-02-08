@@ -37,6 +37,14 @@ classdef ExtendedEuclideanTest < matlab.unittest.TestCase
                 verify(a, b, testCase);
             end
         end
+
+        function tRandomMedInt(testCase)
+            for x = 1:1000
+                a = randi([100000, 10000000], "int32");
+                b = randi([100000, 10000000], "int32");
+                verify(a, b, testCase);
+            end
+        end
     end
 end
 
