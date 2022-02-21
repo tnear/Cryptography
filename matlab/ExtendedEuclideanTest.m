@@ -24,12 +24,33 @@ classdef ExtendedEuclideanTest < matlab.unittest.TestCase
             verify(true, true, testCase);
             verify(true, false, testCase);
             verify(false, true, testCase);
-            %verify(false, false, testCase); todo:
+            verify(false, false, testCase);
         end
 
         function fiftyNested(testCase)
             for a = 1:50
                 for b = 1:50
+                    verify(a, b, testCase);
+                end
+            end
+        end
+
+        function negative(testCase)
+            num = 15;
+            for a = 1:num
+                for b = -1:-1:-num
+                    verify(a, b, testCase);
+                end
+            end
+
+            for a = -1:-1:-num
+                for b = 1:1:num
+                    verify(a, b, testCase);
+                end
+            end
+
+            for a = -1:-1:-num
+                for b = -1:-1:-num
                     verify(a, b, testCase);
                 end
             end

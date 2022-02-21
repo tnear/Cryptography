@@ -12,6 +12,7 @@ function [aCoeff, bCoeff, divisor] = ExtendedEuclidean(a, b)
             error(message('MATLAB:gcd:unsupportedType'));
         end
     end
+
     u = [1, 0, a];
     v = [0, 1, b];
     while v(3)
@@ -28,5 +29,8 @@ function [aCoeff, bCoeff, divisor] = ExtendedEuclidean(a, b)
     aCoeff = u(1);
     bCoeff = u(2);
     divisor = u(3);
+    aCoeff = aCoeff * sign(divisor);
+    bCoeff = bCoeff * sign(divisor);
+    divisor = abs(divisor);
     %assert(int64(aCoeff) * int64(a) + int64(bCoeff) * int64(b) == int64(divisor));
 end
