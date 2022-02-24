@@ -11,6 +11,12 @@ function [aCoeff, bCoeff, divisor] = ExtendedEuclidean(a, b)
         if isunsigned
             error(message('MATLAB:gcd:unsupportedType'));
         end
+    else
+        classin = superiorfloat(a, b);
+        largestFlint = flintmax(classin);
+        if abs(a) > largestFlint || abs(b) > largestFlint
+            warning(message('MATLAB:gcd:largestFlint'));
+        end
     end
 
     u = [1, 0, a];

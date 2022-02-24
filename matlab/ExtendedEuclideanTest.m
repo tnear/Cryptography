@@ -105,16 +105,30 @@ classdef ExtendedEuclideanTest < matlab.unittest.TestCase
             end
         end
 
-        %{
-        todo:
-        function tE63(testCase)
-            for x = 1:1000
-                a = 2^54 - randi(2^53 - 1);
-                b = 2^54 - randi(2^53 - 1);
+        function largestFlint(testCase)
+            % double
+            testCase.verifyWarning(@() ExtendedEuclidean(2^54, 2), "MATLAB:gcd:largestFlint");
+            testCase.verifyWarning(@() ExtendedEuclidean(2, 2^54), "MATLAB:gcd:largestFlint");
+            testCase.verifyWarning(@() ExtendedEuclidean(-2^54, -2), "MATLAB:gcd:largestFlint");
+            testCase.verifyWarning(@() ExtendedEuclidean(-2, 2^54), "MATLAB:gcd:largestFlint");
+            % single
+            testCase.verifyWarning(@() ExtendedEuclidean(single(2)^25, single(2)), "MATLAB:gcd:largestFlint");
+            testCase.verifyWarning(@() ExtendedEuclidean(single(2), 2^25), "MATLAB:gcd:largestFlint");
+            testCase.verifyWarning(@() ExtendedEuclidean(-single(2)^25, -single(2)), "MATLAB:gcd:largestFlint");
+            testCase.verifyWarning(@() ExtendedEuclidean(single(2), 2^25), "MATLAB:gcd:largestFlint");
+        end
+
+        function E64(testCase)
+            testCase.applyFixture( ...
+                matlab.unittest.fixtures.SuppressedWarningsFixture( ...
+                "MATLAB:gcd:largestFlint"));
+
+            for x = 1:500
+                a = 2^64 - randi(2^53 - 1);
+                b = 2^64 - randi(2^53 - 1);
                 verify(a, b, testCase);
             end
         end
-        %}
     end
 end
 
