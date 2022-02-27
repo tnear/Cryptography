@@ -56,6 +56,15 @@ classdef ExtendedEuclideanTest < matlab.unittest.TestCase
             end
         end
 
+        function negativeInt(testCase)
+            num = int32(15);
+            for a = -1:-1:-num
+                for b = -1:-1:-num
+                    verify(a, b, testCase);
+                end
+            end
+        end
+
         function randomSmall(testCase)
             for x = 1:1000
                 a = randi([100, 10000]);
@@ -76,6 +85,16 @@ classdef ExtendedEuclideanTest < matlab.unittest.TestCase
             for x = 1:1000
                 a = randi([100000, 10000000], "int32");
                 b = randi([100000, 10000000], "int32");
+                verify(a, b, testCase);
+            end
+        end
+
+        function negativeRandomMedInt32(testCase)
+            for x = 1:1000
+                a = -randi([100000, 10000000], "int32");
+                b = -randi([100000, 10000000], "int32");
+                a = a + mod(a, 2) + 1; % ensure odd
+                b = b + mod(b, 2) + 1;
                 verify(a, b, testCase);
             end
         end
@@ -129,11 +148,27 @@ classdef ExtendedEuclideanTest < matlab.unittest.TestCase
                 verify(a, b, testCase);
             end
         end
+
+        function I63(testCase)
+            testCase.applyFixture( ...
+                matlab.unittest.fixtures.SuppressedWarningsFixture( ...
+                "MATLAB:gcd:largestFlint"));
+
+            for x = 1:500
+                a = int64(2)^63 - randi([1, 100]) * randi(2^53 - 1);
+                b = int64(2)^63 - randi([1, 100]) * randi(2^53 - 1);
+                verify(a, b, testCase);
+            end
+        end
     end
 end
 
 function verify(a, b, testCase)
-    [aCoeff, bCoeff, divisor] = ExtendedEuclidean(a, b);
+    try
+        [aCoeff, bCoeff, divisor] = ExtendedEuclidean(a, b);
+    catch me
+        disp(me);
+    end
     [divAct, aAct, bAct] = gcd(a, b);
 
     if issparse(a) || issparse(b)
