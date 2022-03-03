@@ -160,6 +160,19 @@ classdef ExtendedEuclideanTest < matlab.unittest.TestCase
                 verify(a, b, testCase);
             end
         end
+
+        function realMax(testCase)
+            testCase.applyFixture( ...
+                matlab.unittest.fixtures.SuppressedWarningsFixture( ...
+                "MATLAB:gcd:largestFlint"));
+
+            verify(realmax, realmax, testCase);
+            for x = 1:500
+                a = realmax * rand;
+                b = realmax * rand;
+                verify(a, b, testCase);
+            end
+        end
     end
 end
 
