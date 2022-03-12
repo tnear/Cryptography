@@ -1,8 +1,8 @@
 # AffineCipher.py
-# An Affine cipher is a monoalphabetic substitution cipher which uses the formula
+# An Affine cipher is a monoalphabetic substitution cipher which uses the formula...
 # ax + b (mod 26) to encrypt and
 # a^-1 (x - b) (mod 26) to decrypt
-# Decryption requires a^-1 to exist and throws an exception for invalid 'a'
+# Decryption requires a^-1 (mod 26) to exist and throws an exception when no inverse exists
 
 import math
 from enum import Enum
