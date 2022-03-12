@@ -13,7 +13,8 @@ classdef DiscreteLogarithmTest < matlab.unittest.TestCase
             %testCase.verifyEqual(DiscreteLogarithm(100001, 67385023448517, 70606432933607), 5469654575878);
         end
 
-        function gcdNot1(testCase)
+        function compositeMod(testCase)
+            % modulus (3rd argument) not prime
             testCase.verifyEqual(DiscreteLogarithm(5, 4, 2), 0);
             testCase.verifyEqual(DiscreteLogarithm(10, 3, 4), 0);
             testCase.verifyEqual(DiscreteLogarithm(212, 11, 77), 0);
