@@ -1,4 +1,5 @@
 # CaesarCipherTest.py
+# Regression and performance tests for Caesar Cipher
 
 import unittest
 import CaesarCipher
