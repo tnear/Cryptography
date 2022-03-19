@@ -1,6 +1,6 @@
 // CaesarCipher.h
-// C++ Caesar cipher implementation which takes input string and a shift:
-// CaesarCipher::encrypt("abc", 2") => "cde"
+// C++ Caesar cipher implementation which takes input string and a numeric shift:
+// CaesarCipher::encrypt("abc", 2) => "cde"
 // This implementation converts upper and lowercase letters while skipping others:
 // CaesarCipher::encrypt("a B", -1) => "z A"
 
