@@ -4,7 +4,7 @@ function result = DiscreteLogarithm(a, b, m)
     %   a ^ result = b (mod m)
 
     result = 0;
-    % brute-force every number in range [1, m]
+    % slow: brute-force every number in range [1, m]
     for x = 1:m
         % modular exponentiation
         modulo = ModExp(a, x, m);
