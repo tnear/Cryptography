@@ -16,7 +16,7 @@ public:
 
     static std::string encrypt(const std::string &input, int a, int b)
     {
-        a %= ALPHA; // restrict inputs to [0:25]
+        a %= ALPHA; // restrict inputs to lowercase alphabet domain, [0:25]
         b %= ALPHA;
 
         const bool isCoprime = gcd(a, ALPHA) == 1;
