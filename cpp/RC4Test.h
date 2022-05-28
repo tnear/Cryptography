@@ -1,6 +1,6 @@
 // RC4Test.h
 // Test suite for RC4 stream cipher
-// Contains positive tests for a variety of positive and negative input scenarios
+// Tests for a variety of positive and negative input scenarios
 
 #ifndef RC4_TEST_H
 #define RC4_TEST_H
