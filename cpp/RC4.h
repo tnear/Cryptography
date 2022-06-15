@@ -86,6 +86,7 @@ private:
         return cipherText;
     }
 
+    // converts vector of int into a hex string,
     // ex: [50, 146, 220] => "3292dc"
     static std::string intToHex(const std::vector<int> &vInt)
     {
